@@ -3,17 +3,19 @@ package com.example.almacenamientoaerolinea;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class RegistrarVuelo extends AppCompatActivity {
-    private EditText etIdAero, etNomAero;
-    private Button btnBuscar1, btnModificar1, btnEliminar1;
+    private EditText etIdAero, etNomAero, etIdVuelo, etNomOrigen, etNomDestino, etFecha, etHora;
+    private Button btnBuscar1, btnModificar1, btnEliminar1, btnRegistroVue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +24,15 @@ public class RegistrarVuelo extends AppCompatActivity {
 
         etIdAero = (EditText) findViewById(R.id.etIdAero);
         etNomAero = (EditText) findViewById(R.id.etNomAero);
+        etIdVuelo = (EditText) findViewById(R.id.etIdVuelo);
+        etNomOrigen = (EditText) findViewById(R.id.etNomOrigen);
+        etNomDestino = (EditText) findViewById(R.id.etNomDestino);
+        etFecha = (EditText) findViewById(R.id.etFecha);
+        etHora = (EditText) findViewById(R.id.etHora);
+
+        //Creacion de objetos de enlaces a las bases de datos
         Aerolinea oper = new Aerolinea(this, "operacion", null, 1);
+        Vuelo oper1 = new Vuelo(this, "operacion1", null, 1);
 
         //Boton para Consultar Aerolineas
         btnBuscar1 = (Button) findViewById(R.id.btnBuscar1);
@@ -117,6 +127,61 @@ public class RegistrarVuelo extends AppCompatActivity {
 
             }
         });
+
+        //Boton para registrar Vuelos con sus Aerolineas
+        btnRegistroVue = (Button) findViewById(R.id.btnRegistroVue);
+        btnRegistroVue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SQLiteDatabase BDVuelos = oper1.getWritableDatabase();
+
+                String IdVuelo = etIdVuelo.getText().toString();
+                String NomAero = etNomAero.getText().toString();
+                String NomOrigen = etNomOrigen.getText().toString();
+                String NomDestino = etNomDestino.getText().toString();
+                String Fecha = etFecha.getText().toString();
+                String Hora = etHora.getText().toString();
+
+                if (!IdVuelo.isEmpty() && !NomAero.isEmpty() && !NomOrigen.isEmpty() && !NomDestino.isEmpty() && !Fecha.isEmpty() && !Hora.isEmpty()){
+                    ContentValues registroV = new ContentValues();
+                    registroV.put("id", IdVuelo);
+                    registroV.put("aerolinea", NomAero);
+                    registroV.put("origen", NomOrigen);
+                    registroV.put("destino", NomDestino);
+                    registroV.put("fecha", Fecha);
+                    registroV.put("hora", Hora);
+
+                    BDVuelos.insert("vuelos", null, registroV);
+                    BDVuelos.close();
+
+                    etIdAero.setText("");
+                    etIdVuelo.setText("");
+                    etNomAero.setText("");
+                    etNomOrigen.setText("");
+                    etNomDestino.setText("");
+                    etFecha.setText("");
+                    etHora.setText("");
+
+                    etIdAero.setHint("ID Aerolinea");
+                    etIdVuelo.setHint("ID Vuelo");
+                    etNomAero.setHint("Aerolinea");
+                    etNomOrigen.setHint("Origen");
+                    etNomDestino.setHint("Destino");
+                    etFecha.setHint("Fecha");
+                    etHora.setHint("Hora");
+
+                    Toast.makeText(getApplicationContext(), "Vuelo Registrado Exitosamente!", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "No puedes guardar datos vacios", Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        });
+
+
+
 
 
     }

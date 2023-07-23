@@ -15,12 +15,21 @@
     <string name="IDAero">000</string>
     <string name="NombreAe">Nombre de la Aerolinea</string>
     <string name="NombreAero">Aerolinea CUFCP</string>
-    <string name="IdAero">ID Aerolinea</string>
     <string name="NomAero">Aerolinea</string>
 
     <string name="Consulta">Buscar</string>
     <string name="Modificar">Modificar</string>
     <string name="Registrar">Registrar</string>
     <string name="Eliminar">Eliminar</string>
+    <string name="RegistrarVue">Registrar Vuelo</string>
+    <string name="ReservarC">Reservar Vuelo</string>
+
+    <string name="IdVue">ID Vuelo</string>
+    <string name="Origen">Origen</string>
+    <string name="Destino">Destino</string>
+    <string name="Fecha">Fecha</string>
+    <string name="Hora">Hora</string>
+
+
 
 </resources>

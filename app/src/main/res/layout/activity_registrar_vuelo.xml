@@ -6,49 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".RegistrarVuelo">
 
-    <EditText
-        android:id="@+id/etIdAero"
-        android:layout_width="121dp"
-        android:layout_height="59dp"
-        android:hint="@string/IdAero"
-        android:inputType="text"
+    <TextView
+        android:id="@+id/tvRegistroV"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="@string/RegistroV"
         android:textColor="@color/Negro"
-        android:textSize="20sp"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etNomAero"
-        android:layout_width="269dp"
+        android:layout_width="250dp"
         android:layout_height="59dp"
         android:layout_marginStart="24dp"
-        android:ems="10"
+        android:layout_marginTop="20dp"
         android:hint="@string/NomAero"
         android:inputType="text"
         android:textColor="@color/Negro"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/etIdAero"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvRegistroV" />
 
-    <Button
-        android:id="@+id/btnBuscar1"
-        android:layout_width="104dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="1dp"
-        android:text="@string/Consulta"
-        android:textSize="20dp"
-        android:textStyle="bold"
+    <EditText
+        android:id="@+id/etIdAero"
+        android:layout_width="140dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/IDAe"
+        android:inputType="text"
+        android:textColor="@color/Negro"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etIdAero" />
+        app:layout_constraintTop_toBottomOf="@+id/tvRegistroV" />
 
     <Button
         android:id="@+id/btnModificar1"
         android:layout_width="150dp"
         android:layout_height="56dp"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="20dp"
         android:text="@string/Modificar"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -56,15 +59,109 @@
         app:layout_constraintTop_toBottomOf="@+id/etNomAero" />
 
     <Button
+        android:id="@+id/btnBuscar1"
+        android:layout_width="104dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/Consulta"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etIdAero" />
+
+    <Button
         android:id="@+id/btnEliminar1"
         android:layout_width="150dp"
         android:layout_height="56dp"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="20dp"
         android:text="@string/Eliminar"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/btnModificar1"
         app:layout_constraintTop_toBottomOf="@+id/etNomAero" />
+
+    <EditText
+        android:id="@+id/etIdVuelo"
+        android:layout_width="121dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="36dp"
+        android:hint="@string/IdVue"
+        android:inputType="text"
+        android:textColor="@color/Negro"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBuscar1" />
+
+    <EditText
+        android:id="@+id/etNomOrigen"
+        android:layout_width="269dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="32dp"
+        android:hint="@string/Origen"
+        android:inputType="text"
+        android:textColor="@color/Negro"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etIdVuelo" />
+
+    <EditText
+        android:id="@+id/etNomDestino"
+        android:layout_width="269dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="36dp"
+        android:hint="@string/Destino"
+        android:inputType="text"
+        android:textColor="@color/Negro"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNomOrigen" />
+
+    <EditText
+        android:id="@+id/etFecha"
+        android:layout_width="195dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:hint="@string/Fecha"
+        android:inputType="text"
+        android:textColor="@color/Negro"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNomDestino" />
+
+    <EditText
+        android:id="@+id/etHora"
+        android:layout_width="150dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
+        android:hint="@string/Hora"
+        android:inputType="text"
+        android:textColor="@color/Negro"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintStart_toEndOf="@+id/etFecha"
+        app:layout_constraintTop_toBottomOf="@+id/etNomDestino" />
+
+    <Button
+        android:id="@+id/btnRegistroVue"
+        android:layout_width="204dp"
+        android:layout_height="51dp"
+        android:text="@string/RegistroV"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etFecha"
+        app:layout_constraintVertical_bias="0.321" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
