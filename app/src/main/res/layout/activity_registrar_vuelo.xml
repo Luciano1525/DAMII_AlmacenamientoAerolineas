@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrarVuelo">
+
+    <EditText
+        android:id="@+id/etIdAero"
+        android:layout_width="121dp"
+        android:layout_height="59dp"
+        android:hint="@string/IdAero"
+        android:inputType="text"
+        android:textColor="@color/Negro"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etNomAero"
+        android:layout_width="269dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="24dp"
+        android:ems="10"
+        android:hint="@string/NomAero"
+        android:inputType="text"
+        android:textColor="@color/Negro"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etIdAero"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnBuscar1"
+        android:layout_width="104dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="1dp"
+        android:text="@string/Consulta"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etIdAero" />
+
+    <Button
+        android:id="@+id/btnModificar1"
+        android:layout_width="150dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="1dp"
+        android:text="@string/Modificar"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/btnBuscar1"
+        app:layout_constraintTop_toBottomOf="@+id/etNomAero" />
+
+    <Button
+        android:id="@+id/btnEliminar1"
+        android:layout_width="150dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="1dp"
+        android:text="@string/Eliminar"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/btnModificar1"
+        app:layout_constraintTop_toBottomOf="@+id/etNomAero" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

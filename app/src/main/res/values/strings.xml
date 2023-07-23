@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Almacenamiento Aerolinea</string>
+    <string name="TipoUsuario">Tipo de Usuario: </string>
+    <string name="Usuario"> No Seleccionado</string>
+
+    <string name="Vuelos">Mostrar Vuelos</string>
+    <string name="RegistroV">Registrar vuelo</string>
+    <string name="RegistroA">Registrar Aerolinea</string>
+    <string name="ReservacionesV">Mis vuelos reservados</string>
+    <string name="Operador">Operador</string>
+    <string name="Cliente">Cliente</string>
+
+    <string name="Bienvenida">Bienvenido al Centro de Operaciones de Aerolinea LISS</string>
+    <string name="IDAe">ID Aerolinea</string>
+    <string name="IDAero">000</string>
+    <string name="NombreAe">Nombre de la Aerolinea</string>
+    <string name="NombreAero">Aerolinea CUFCP</string>
+    <string name="IdAero">ID Aerolinea</string>
+    <string name="NomAero">Aerolinea</string>
+
+    <string name="Consulta">Buscar</string>
+    <string name="Modificar">Modificar</string>
+    <string name="Registrar">Registrar</string>
+    <string name="Eliminar">Eliminar</string>
+
+</resources>

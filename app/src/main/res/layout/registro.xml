@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/lic" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_margin="5sp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tvBienvenida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Bienvenida"
+        android:textColor="@color/Negro"
+        android:textSize="29sp"
+        android:textStyle="bold"
+        android:justificationMode="inter_word"
+        />
+
+    <View
+        android:id="@+id/vseparador1"
+        android:layout_width="match_parent"
+        android:layout_height="21dp"
+        android:layout_margin="5sp"
+        android:visibility="invisible" />
+
+
+    <TextView
+        android:id="@+id/tvIDAe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/IDAe"
+        android:textColor="@color/Negro"
+        android:textSize="27sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etIDAero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="27sp"
+        android:inputType="text"
+        android:hint="@string/IDAero"
+        android:textColor="@color/Negro"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="21dp"
+        android:layout_margin="5sp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tvNombreAe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/NombreAe"
+        android:textColor="@color/Negro"
+        android:textSize="27sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etNombreAero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="27sp"
+        android:inputType="text"
+        android:hint="@string/NombreAero"
+        android:textColor="@color/Negro"
+        />
+
+
+</LinearLayout>
