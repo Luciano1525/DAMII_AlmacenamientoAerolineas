@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:textSize="27sp"
-        android:inputType="text"
+        android:inputType="number"
         android:hint="@string/IDAero"
         android:textColor="@color/Negro"
         />

@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class RegistrarVuelo extends AppCompatActivity {
     private EditText etIdAero, etNomAero, etIdVuelo, etNomOrigen, etNomDestino, etFecha, etHora;
-    private Button btnBuscar1, btnModificar1, btnEliminar1, btnRegistroVue;
+    private Button btnBuscar1, btnModificar1, btnEliminar1, btnRegistroVue, btnSalir1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,7 @@ public class RegistrarVuelo extends AppCompatActivity {
         //Creacion de objetos de enlaces a las bases de datos
         Aerolinea oper = new Aerolinea(this, "operacion", null, 1);
         Vuelo oper1 = new Vuelo(this, "operacion1", null, 1);
+
 
         //Boton para Consultar Aerolineas
         btnBuscar1 = (Button) findViewById(R.id.btnBuscar1);
@@ -180,9 +181,16 @@ public class RegistrarVuelo extends AppCompatActivity {
             }
         });
 
-
-
-
+        //Boton para salir y regresar al menu principal
+        btnSalir1 = (Button) findViewById(R.id.btnSalir1);
+        btnSalir1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("INFO:", "RegistroVuelos");
+                Intent intent = new Intent(RegistrarVuelo.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

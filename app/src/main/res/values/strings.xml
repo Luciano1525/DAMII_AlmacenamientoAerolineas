@@ -22,8 +22,12 @@
     <string name="Registrar">Registrar</string>
     <string name="Eliminar">Eliminar</string>
     <string name="RegistrarVue">Registrar Vuelo</string>
-    <string name="ReservarC">Reservar Vuelo</string>
+    <string name="ReservarE">Reservar Vuelo</string>
+    <string name="ReservarC">Reservar</string>
 
+    <string name="IDCliente">ID Cliente</string>
+    <string name="NombreCliente">Nombre Cliente</string>
+    <string name="Salida">Salir</string>
     <string name="IdVue">ID Vuelo</string>
     <string name="Origen">Origen</string>
     <string name="Destino">Destino</string>
