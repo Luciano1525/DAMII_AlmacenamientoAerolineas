@@ -186,7 +186,7 @@ public class RegistrarVuelo extends AppCompatActivity {
         btnSalir1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("INFO:", "RegistroVuelos");
+                Log.i("INFO:", "SalirMenu");
                 Intent intent = new Intent(RegistrarVuelo.this, MainActivity.class);
                 startActivity(intent);
             }

@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/tvRegistroR"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/ReservarE"
         android:textColor="@color/Negro"
@@ -20,10 +20,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:id="@+id/etIdReserva1"
+        android:layout_width="121dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="4dp"
+        android:hint="@string/IdReser"
+        android:inputType="number"
+        android:textColor="@color/Negro"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etIdVuelo1"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegistroR" />
+
+    <EditText
         android:id="@+id/etIdVuelo1"
         android:layout_width="121dp"
         android:layout_height="59dp"
         android:layout_marginStart="68dp"
+        android:layout_marginTop="4dp"
         android:hint="@string/IdVue"
         android:inputType="number"
         android:textColor="@color/Negro"
@@ -35,14 +49,14 @@
         android:id="@+id/etNomOrigen1"
         android:layout_width="269dp"
         android:layout_height="59dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="36dp"
         android:hint="@string/Origen"
         android:inputType="text"
         android:textColor="@color/Negro"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etIdVuelo1" />
+        app:layout_constraintTop_toBottomOf="@+id/etIdReserva1" />
 
     <EditText
         android:id="@+id/etNomDestino1"
@@ -134,7 +148,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.031"
-        app:layout_constraintStart_toEndOf="@+id/etFecha"
+        app:layout_constraintStart_toEndOf="@+id/etFecha1"
         app:layout_constraintTop_toBottomOf="@+id/etNomAero1" />
 
     <EditText

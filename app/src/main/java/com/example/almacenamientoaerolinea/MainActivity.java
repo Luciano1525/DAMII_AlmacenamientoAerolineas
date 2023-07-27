@@ -144,7 +144,9 @@ public class MainActivity extends AppCompatActivity {
         btnReservacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Log.i("INFO:", "VuelosReservaciones");
+                Intent intent = new Intent(MainActivity.this, MostrarReservaciones.class);
+                startActivity(intent);
             }
         });
 

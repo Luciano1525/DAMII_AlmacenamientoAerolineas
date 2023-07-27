@@ -15,13 +15,14 @@ import android.widget.Toast;
 
 public class MostrarVuelos extends AppCompatActivity {
     private Button btnSalir2, btnBuscar2, btnModificar2, btnEliminar2, btnReservarVu;
-    private EditText etIdVuelo1, etNomOrigen1, etNomDestino1, etNomAero1, etFecha1, etHora1, etIdCliente, etNomClien;
+    private EditText etIdVuelo1, etNomOrigen1, etNomDestino1, etNomAero1, etFecha1, etHora1, etIdCliente, etNomClien, etIdReserva1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostrar_vuelos);
 
+        etIdReserva1 = (EditText) findViewById(R.id.etIdReserva1);
         etIdVuelo1 = (EditText) findViewById(R.id.etIdVuelo1);
         etNomOrigen1 = (EditText) findViewById(R.id.etNomOrigen1);
         etNomDestino1 = (EditText) findViewById(R.id.etNomDestino1);
@@ -33,8 +34,9 @@ public class MostrarVuelos extends AppCompatActivity {
 
         //Creacion de objetos de enlaces a las bases de datos
         Vuelo oper = new Vuelo(this, "operacion1", null, 1);
-        Reservaciones oper1 = new Reservaciones(this, "operacion2", null, 1);
+        Reservacion oper1 = new Reservacion(this, "operacion2", null, 1);
 
+        //Boton para consultar los vuelos
         btnBuscar2 = (Button) findViewById(R.id.btnBuscar2);
         btnBuscar2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,7 +169,7 @@ public class MostrarVuelos extends AppCompatActivity {
             public void onClick(View v) {
                 SQLiteDatabase BDReservaciones = oper1.getWritableDatabase();
 
-                String idVue = etIdVuelo1.getText().toString();
+                String idReser = etIdReserva1.getText().toString();
                 String Origen = etNomOrigen1.getText().toString();
                 String Destino = etNomDestino1.getText().toString();
                 String Aerolinea = etNomAero1.getText().toString();
@@ -177,10 +179,10 @@ public class MostrarVuelos extends AppCompatActivity {
                 String NombClien = etNomClien.getText().toString();
 
 
-                if(!idVue.isEmpty() && !Origen.isEmpty() && !Destino.isEmpty() && !Aerolinea.isEmpty()
+                if(!idReser.isEmpty() && !Origen.isEmpty() && !Destino.isEmpty() && !Aerolinea.isEmpty()
                         && !Fecha.isEmpty() && !Hora.isEmpty() && !idClien.isEmpty() && !NombClien.isEmpty()){
                     ContentValues registroR = new ContentValues();
-                    registroR.put("id", idVue);
+                    registroR.put("id", idReser);
                     registroR.put("cliente", NombClien);
                     registroR.put("aerolinea", Aerolinea);
                     registroR.put("origen", Origen);
@@ -188,10 +190,11 @@ public class MostrarVuelos extends AppCompatActivity {
                     registroR.put("fecha", Fecha);
                     registroR.put("hora", Hora);
 
-                    BDReservaciones.insert("reservaciones", null, registroR);
+                    BDReservaciones.insert("reservacion", null, registroR);
                     BDReservaciones.close();
 
 
+                    etIdReserva1.setText("");
                     etIdVuelo1.setText("");
                     etNomOrigen1.setText("");
                     etNomDestino1.setText("");
@@ -201,6 +204,7 @@ public class MostrarVuelos extends AppCompatActivity {
                     etIdCliente.setText("");
                     etNomClien.setText("");
 
+                    etIdReserva1.setHint("ID Reserva");
                     etIdVuelo1.setHint("ID Vuelo");
                     etNomOrigen1.setHint("Origen");
                     etNomDestino1.setHint("Destino");
@@ -220,18 +224,17 @@ public class MostrarVuelos extends AppCompatActivity {
             }
         });
 
-
-
         //Boton para salir y regresar al menu principal
         btnSalir2 = (Button) findViewById(R.id.btnSalir2);
         btnSalir2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("INFO:", "RegistroVuelos");
+                Log.i("INFO:", "SalirMenu");
                 Intent intent = new Intent(MostrarVuelos.this, MainActivity.class);
                 startActivity(intent);
             }
         });
+
     }
 
 }
