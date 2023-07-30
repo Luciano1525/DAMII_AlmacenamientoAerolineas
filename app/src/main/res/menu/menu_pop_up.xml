@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/MIC"
+        android:title="Claro"
+        android:tooltipText="Tema Claro"
+        />
+    <item
+        android:id="@+id/MIO"
+        android:title="Oscuro"
+        android:tooltipText="Tema Oscuro"
+        />
+    <item
+        android:id="@+id/MIP1"
+        android:title="Tricolor 1"
+        android:tooltipText="Tema Tricolor 1"
+        />
+    <item
+        android:id="@+id/MIP2"
+        android:title="Tricolor 2"
+        android:tooltipText="Tema Tricolor 2"
+        />
+    <item
+        android:id="@+id/MIP3"
+        android:title="Tricolor 3"
+        android:tooltipText="Tema Tricolor 3"
+        />
+    <item
+        android:id="@+id/MIP4"
+        android:title="Tricolor 4"
+        android:tooltipText="Tema Tricolor 4"
+        />
+
+
+</menu>

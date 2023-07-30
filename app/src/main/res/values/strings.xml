@@ -37,7 +37,7 @@
     <string name="Destino">Destino</string>
     <string name="Fecha">Fecha</string>
     <string name="Hora">Hora</string>
-
+    <string name="Menus">Menu</string>
     <string name="Finalizar">Finalizar Programa</string>
 
 </resources>

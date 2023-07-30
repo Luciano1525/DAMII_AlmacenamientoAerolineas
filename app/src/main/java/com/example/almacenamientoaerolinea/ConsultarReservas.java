@@ -3,7 +3,9 @@ package com.example.almacenamientoaerolinea;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -20,6 +22,24 @@ public class ConsultarReservas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Recuperar Tema y Aplicarlo
+        SharedPreferences TS = getSharedPreferences("Tema", Context.MODE_PRIVATE);
+        String TemaSeleccionado = TS.getString("TemaSeleccionado2", "No Hay Tema Aplicado");
+        if (TemaSeleccionado != null) {
+            if (TemaSeleccionado.equals("Claro")) {
+                setTheme(androidx.appcompat.R.style.Theme_AppCompat_DayNight_DarkActionBar);
+            } else if (TemaSeleccionado.equals("Oscuro")) {
+                setTheme(R.style.Oscuro);
+            } else if (TemaSeleccionado.equals("Personalizado1")) {
+                setTheme(R.style.MiTema1);
+            } else if (TemaSeleccionado.equals("Personalizado2")) {
+                setTheme(R.style.MiTema2);
+            } else if (TemaSeleccionado.equals("Personalizado3")) {
+                setTheme(R.style.MiTema3);
+            } else if (TemaSeleccionado.equals("Personalizado4")) {
+                setTheme(R.style.MiTema4);
+            }
+        }
         setContentView(R.layout.activity_consultar_reservas);
 
         etIdReserva = (EditText) findViewById(R.id.etIdReserva);
