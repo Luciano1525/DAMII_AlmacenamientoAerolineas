@@ -86,9 +86,9 @@ public class MostrarVuelos extends AppCompatActivity {
                         && !Fecha.isEmpty() && !Hora.isEmpty()) {
                     ContentValues mod = new ContentValues();
                     mod.put("id", idVue);
-                    mod.put("aerolinea", Origen);
-                    mod.put("origen", Destino);
-                    mod.put("destino", Aerolinea);
+                    mod.put("aerolinea", Aerolinea);
+                    mod.put("origen", Origen);
+                    mod.put("destino", Destino);
                     mod.put("fecha", Fecha);
                     mod.put("hora", Hora);
 

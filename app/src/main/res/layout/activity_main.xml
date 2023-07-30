@@ -38,10 +38,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="40dp"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <View
             android:id="@+id/separador1"
@@ -55,10 +56,10 @@
             android:layout_width="269dp"
             android:layout_height="66dp"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text="@string/Vuelos"
             android:textSize="25dp"
             android:textStyle="bold"
-            android:gravity="center"
             android:visibility="invisible" />
 
         <View
@@ -73,12 +74,11 @@
             android:layout_width="269dp"
             android:layout_height="66dp"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text="@string/RegistroV"
             android:textSize="25dp"
             android:textStyle="bold"
-            android:visibility="invisible"
-            android:gravity="center"
-            />
+            android:visibility="invisible" />
 
         <View
             android:id="@+id/separador3"
@@ -92,12 +92,11 @@
             android:layout_width="349dp"
             android:layout_height="64dp"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text="@string/RegistroA"
             android:textSize="25dp"
             android:textStyle="bold"
-            android:visibility="invisible"
-            android:gravity="center"
-            />
+            android:visibility="invisible" />
 
         <View
             android:id="@+id/separador4"
@@ -111,12 +110,29 @@
             android:layout_width="349dp"
             android:layout_height="64dp"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text="@string/ReservacionesV"
             android:textSize="25dp"
             android:textStyle="bold"
-            android:visibility="invisible"
+            android:visibility="invisible" />
+
+        <View
+            android:id="@+id/separador5"
+            android:layout_width="21dp"
+            android:layout_height="40dp"
+            android:layout_margin="5sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnFinalizar"
+            android:layout_width="349dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
             android:gravity="center"
-            />
+            android:text="@string/Finalizar"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
 
     </LinearLayout>
 

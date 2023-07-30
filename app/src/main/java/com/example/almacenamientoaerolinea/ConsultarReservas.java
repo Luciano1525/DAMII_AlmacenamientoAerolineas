@@ -2,6 +2,7 @@ package com.example.almacenamientoaerolinea;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -57,6 +58,104 @@ public class ConsultarReservas extends AppCompatActivity {
                     } else {
                         Toast.makeText(getApplicationContext(), "La Reservacion no Existe", Toast.LENGTH_SHORT).show();
                         BBReservacion.close();
+                    }
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Introduzca el id de la Reservacion", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+
+        //Boton para Modificar Reservaciones
+        btnModificar3 = (Button) findViewById(R.id.btnModificar3);
+        btnModificar3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SQLiteDatabase BBReservacion = oper1.getWritableDatabase();
+                String idRese = etIdReserva.getText().toString();
+                String Cliente = etNomClien1.getText().toString();
+                String Origen = etNomOrigen2.getText().toString();
+                String Destino = etNomDestino2.getText().toString();
+                String Aerolinea = etNomAero2.getText().toString();
+                String Fecha = etFecha2.getText().toString();
+                String Hora = etHora2.getText().toString();
+
+                if(!idRese.isEmpty() && !Cliente.isEmpty()  && !Origen.isEmpty() && !Destino.isEmpty()
+                        && !Aerolinea.isEmpty() && !Fecha.isEmpty() && !Hora.isEmpty()) {
+                    ContentValues mod = new ContentValues();
+                    mod.put("id", idRese);
+                    mod.put("cliente", Cliente);
+                    mod.put("aerolinea", Aerolinea);
+                    mod.put("origen", Origen);
+                    mod.put("destino", Destino);
+                    mod.put("fecha", Fecha);
+                    mod.put("hora", Hora);
+
+                    int cantidadmod = BBReservacion.update("reservacion", mod, "id = " + idRese, null);
+                    BBReservacion.close();
+
+                    etNomOrigen2.setText("");
+                    etNomDestino2.setText("");
+                    etNomAero2.setText("");
+                    etFecha2.setText("");
+                    etHora2.setText("");
+                    etNomClien1.setText("");
+
+                    etNomOrigen2.setHint("Origen");
+                    etNomDestino2.setHint("Destino");
+                    etNomAero2.setHint("Aerolinea");
+                    etFecha2.setHint("Fecha");
+                    etHora2.setHint("Hora");
+                    etNomClien1.setHint("Nombre del Cliente");
+
+                    if (cantidadmod == 1){
+                        Toast.makeText(getApplicationContext(), "Reservacion Modificado Exitosamente", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Reservacion no Existe", Toast.LENGTH_SHORT).show();
+                    }
+
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Introduzca el id de la Reservacion", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+        //Boton para Eliminar Reservaciones
+        btnEliminar3 = (Button) findViewById(R.id.btnEliminar3);
+        btnEliminar3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SQLiteDatabase BBReservacion = oper1.getWritableDatabase();
+                String idRese = etIdReserva.getText().toString();
+
+                if(!idRese.isEmpty()) {
+                    int cantidad = BBReservacion.delete("reservacion", "id = " + idRese, null);
+                    BBReservacion.close();
+
+                    etIdReserva.setText("");
+                    etNomOrigen2.setText("");
+                    etNomDestino2.setText("");
+                    etNomAero2.setText("");
+                    etFecha2.setText("");
+                    etHora2.setText("");
+                    etNomClien1.setText("");
+
+                    etIdReserva.setHint("ID Reserva");
+                    etNomOrigen2.setHint("Origen");
+                    etNomDestino2.setHint("Destino");
+                    etNomAero2.setHint("Aerolinea");
+                    etFecha2.setHint("Fecha");
+                    etHora2.setHint("Hora");
+                    etNomClien1.setHint("Nombre del Cliente");
+
+                    if (cantidad == 1){
+                        Toast.makeText(getApplicationContext(), "Reservacion Eliminado Exitosamente", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Reservacion no Existe", Toast.LENGTH_SHORT).show();
                     }
 
                 } else {

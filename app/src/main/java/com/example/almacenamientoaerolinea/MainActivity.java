@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private TextView tvUsuario;
-    private Button btnVuelos, btnRegistroV, btnRegistroA, btnReservacion;
+    private Button btnVuelos, btnRegistroV, btnRegistroA, btnReservacion, btnFinalizar;
     private View separador1, separador2, separador3, separador4;
     private EditText etIDAero, etNombreAero;
 
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btnRegistroV = (Button) findViewById(R.id.btnRegistroV);
         btnRegistroA = (Button) findViewById(R.id.btnRegistroA);
         btnReservacion = (Button) findViewById(R.id.btnReservacion);
+        btnFinalizar = (Button) findViewById(R.id.btnFinalizar);
 
         separador1 = (View) findViewById(R.id.separador1);
         separador2 = (View) findViewById(R.id.separador2);
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             btnRegistroV.setVisibility(View.VISIBLE);
             btnRegistroA.setVisibility(View.VISIBLE);
             btnReservacion.setVisibility(View.VISIBLE);
+            btnFinalizar.setVisibility(View.VISIBLE);
 
         } else if (UsuRec.equals(" Cliente")){
             separador3.setVisibility(View.GONE);
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             btnRegistroV.setVisibility(View.GONE);
             btnRegistroA.setVisibility(View.GONE);
             btnReservacion.setVisibility(View.VISIBLE);
+            btnFinalizar.setVisibility(View.VISIBLE);
 
         }
         tvUsuario.setText(UsuRec);
@@ -144,9 +147,19 @@ public class MainActivity extends AppCompatActivity {
         btnReservacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("INFO:", "VuelosReservaciones");
+                Log.i("INFO:", "ConsultaReser");
                 Intent intent = new Intent(MainActivity.this, MostrarReservaciones.class);
                 startActivity(intent);
+            }
+        });
+
+
+        //Boton para Finalizar el Programa
+        btnFinalizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("INFO:", "Finalizar");
+                finishAffinity();
             }
         });
 

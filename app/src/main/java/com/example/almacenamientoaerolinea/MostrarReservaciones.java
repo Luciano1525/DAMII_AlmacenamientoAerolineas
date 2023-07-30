@@ -43,7 +43,7 @@ public class MostrarReservaciones extends AppCompatActivity {
                 String destino = fila.getString(fila.getColumnIndex("destino"));
                 String fecha = fila.getString(fila.getColumnIndex("fecha"));
                 String hora = fila.getString(fila.getColumnIndex("hora"));
-                String espacio = "     ";
+                String espacio = "   ";
 
                 // Crear una nueva fila
                 TableRow row = new TableRow(this);
